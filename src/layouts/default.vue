@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen">
-    <CreativeHeader />
+    <LayoutAppHeader />
     <slot />
   </div>
 </template>

@@ -7,7 +7,7 @@
     :class="[variantClass, sizeClass, { 'pointer-events-none opacity-60': loading || disabled }]"
     :disabled="!to && (disabled || loading)"
   >
-    <UiLoadingIcon v-if="loading" size="sm" />
+    <FeedbackDoodleLoader v-if="loading" compact />
     <slot />
   </component>
 </template>

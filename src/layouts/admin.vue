@@ -1,7 +1,7 @@
 <template>
   <div class="min-h-screen bg-paper text-ink">
     <aside class="fixed inset-y-0 left-0 z-40 hidden w-72 border-r-2 border-ink bg-white p-5 lg:block">
-      <DoodleMark />
+      <BrandDoodleMark />
       <nav class="mt-8 space-y-2">
         <NuxtLink v-for="item in navItems" :key="item.to" :to="item.to" class="admin-link">
           {{ item.label }}
