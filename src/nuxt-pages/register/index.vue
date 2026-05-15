@@ -1,5 +1,5 @@
 <template>
-  <AuthPage mode="login" />
+  <AuthPage mode="register" />
 </template>
 
 <script setup lang="ts">

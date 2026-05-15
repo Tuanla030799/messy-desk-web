@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import ProjectsPage from '@/components/component-pages/projects/ProjectsPage.vue'
+import ProjectsPage from '@/features/projects/ProjectsPage.vue'
 </script>

@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import GalleryPage from '@/components/component-pages/gallery/GalleryPage.vue'
+import GalleryPage from '@/features/gallery/GalleryPage.vue'
 </script>

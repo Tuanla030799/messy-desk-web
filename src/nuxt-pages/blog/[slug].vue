@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import BlogDetailPage from '@/components/component-pages/blog/BlogDetailPage.vue'
+import BlogDetailPage from '@/features/blog/BlogDetailPage.vue'
 </script>

@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import PlaygroundDetailPage from '@/components/component-pages/playground/PlaygroundDetailPage.vue'
+import PlaygroundDetailPage from '@/features/playground/PlaygroundDetailPage.vue'
 </script>

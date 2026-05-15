@@ -3,5 +3,5 @@
 </template>
 
 <script setup lang="ts">
-import UiGuidePage from '@/components/component-pages/ui-guide/UiGuidePage.vue'
+import UiGuidePage from '@/features/ui-guide/UiGuidePage.vue'
 </script>
