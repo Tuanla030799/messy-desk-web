@@ -1,0 +1,202 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: Fraunces, Georgia, serif;
+  --color-paper: #fffaf0;
+  --color-ink: #17202a;
+  --color-muted: #65717d;
+  --color-coral: #ff6f91;
+  --color-mint: #b8f3df;
+  --color-sky: #bde0fe;
+  --color-sun: #f9c74f;
+  --color-violet: #c8b6ff;
+  --shadow-doodle: 5px 6px 0 #17202a;
+  --shadow-soft-doodle: 3px 4px 0 rgba(23, 32, 42, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background:
+    linear-gradient(rgba(23, 32, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 32, 42, 0.035) 1px, transparent 1px),
+    #fffaf0;
+  background-size: 28px 28px;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(249, 199, 79, 0.24), transparent 28%),
+    radial-gradient(circle at 85% 8%, rgba(184, 243, 223, 0.34), transparent 24%),
+    linear-gradient(rgba(23, 32, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 32, 42, 0.035) 1px, transparent 1px),
+    #fffaf0;
+  background-attachment: fixed;
+  background-size: auto, auto, 28px 28px, 28px 28px, auto;
+  color: #17202a;
+  font-family: var(--font-sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html[data-theme='night'],
+html[data-theme='night'] body {
+  background:
+    linear-gradient(rgba(255, 250, 240, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 250, 240, 0.055) 1px, transparent 1px),
+    #17202a;
+  color: #fffaf0;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: #f9c74f;
+  color: #17202a;
+}
+
+.nav-pill {
+  border-radius: 999px;
+  color: #17202a;
+  font-size: 0.9rem;
+  font-weight: 800;
+  padding: 0.55rem 0.9rem;
+  text-decoration: none;
+  transition:
+    background 160ms ease,
+    transform 160ms ease;
+}
+
+.nav-pill:hover,
+.nav-pill.router-link-active {
+  background: #b8f3df;
+  transform: rotate(-1deg);
+}
+
+.sketch-button {
+  align-items: center;
+  background: #f9c74f;
+  border: 2px solid #17202a;
+  border-radius: 999px;
+  box-shadow: 4px 5px 0 #17202a;
+  color: #17202a;
+  font-weight: 900;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  transition:
+    box-shadow 160ms ease,
+    transform 160ms ease;
+}
+
+.sketch-button:hover {
+  box-shadow: 2px 3px 0 #17202a;
+  transform: translate(2px, 2px) rotate(-1deg);
+}
+
+.sketch-link {
+  color: #17202a;
+  display: inline-flex;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: #ff6f91;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 5px;
+}
+
+.doodle-card {
+  background: #ffffff;
+  border: 2px solid #17202a;
+  border-radius: 2rem;
+  box-shadow: var(--shadow-doodle);
+  transition:
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.doodle-card:hover {
+  box-shadow: 3px 4px 0 #17202a;
+  transform: translate(2px, 2px) rotate(-0.5deg);
+}
+
+.tape {
+  background: rgba(249, 199, 79, 0.78);
+  border: 1px solid rgba(23, 32, 42, 0.18);
+  height: 24px;
+  left: 50%;
+  position: absolute;
+  top: -12px;
+  transform: translateX(-50%) rotate(-2deg);
+  width: 86px;
+}
+
+.scribble-underline {
+  background:
+    linear-gradient(90deg, transparent 0 4%, #ff6f91 4% 12%, transparent 12% 17%, #ff6f91 17% 31%, transparent 31% 38%, #ff6f91 38% 100%);
+  border-radius: 999px;
+  display: block;
+  height: 8px;
+  margin-top: 10px;
+  max-width: 300px;
+}
+
+.loader-loop {
+  animation: loop-spin 950ms linear infinite;
+  border: 3px solid #17202a;
+  border-right-color: transparent;
+  border-radius: 44% 56% 48% 52%;
+  display: inline-block;
+  height: 28px;
+  width: 28px;
+}
+
+.floating-sticker {
+  animation: float-sticker 4.5s ease-in-out infinite;
+}
+
+.floating-sticker:nth-child(2) {
+  animation-delay: 700ms;
+}
+
+.floating-sticker:nth-child(3) {
+  animation-delay: 1300ms;
+}
+
+@keyframes loop-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float-sticker {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--r, 0deg));
+  }
+
+  50% {
+    transform: translateY(-12px) rotate(calc(var(--r, 0deg) + 2deg));
+  }
+}
+
+@media (max-width: 640px) {
+  .doodle-card {
+    border-radius: 1.35rem;
+    box-shadow: 3px 4px 0 #17202a;
+  }
+}
