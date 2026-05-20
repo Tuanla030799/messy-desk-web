@@ -19,28 +19,26 @@
       <FeedbackEmptySketch title="Post not found" description="Bai viet nay chua co trong seed content." />
     </div>
 
-    <div v-else class="grid gap-6" :class="{ '2xl:grid-cols-[0.78fr_1.22fr]': !isReadonly }">
-      <div class="space-y-6">
+    <div v-else class="space-y-6">
+      <div class="grid gap-6 xl:grid-cols-[1fr_0.42fr]">
         <UiCard>
           <template #header>
             <h3 class="font-display text-3xl font-black">Post settings</h3>
           </template>
 
-          <div v-if="isReadonly" class="space-y-4">
+          <div v-if="isReadonly" class="grid gap-4 md:grid-cols-2">
             <div v-for="item in detailItems" :key="item.label" class="rounded-2xl border-2 border-ink bg-paper p-4">
               <p class="text-xs font-black uppercase tracking-[0.14em] text-muted">{{ item.label }}</p>
               <p class="mt-2 font-bold text-ink">{{ item.value }}</p>
             </div>
           </div>
 
-          <div v-else class="space-y-4">
+          <div v-else class="grid gap-4 lg:grid-cols-2">
             <UiInput v-model="draft.title" label="Title" placeholder="Post title" />
             <UiInput v-model="draft.slug" label="Slug" placeholder="post-slug" />
-            <UiTextarea v-model="draft.excerpt" label="Excerpt" :rows="4" placeholder="Short intro..." />
-            <div class="grid gap-4 sm:grid-cols-2">
-              <UiInput v-model="draft.date" label="Date" placeholder="20 May 2026" />
-              <UiInput v-model="draft.readTime" label="Read time" placeholder="5 min" />
-            </div>
+            <UiTextarea v-model="draft.excerpt" class="lg:col-span-2" label="Excerpt" :rows="4" placeholder="Short intro..." />
+            <UiInput v-model="draft.date" label="Date" placeholder="20 May 2026" />
+            <UiInput v-model="draft.readTime" label="Read time" placeholder="5 min" />
             <UiInput v-model="tagInput" label="Tags" placeholder="ui, notes, design" />
             <UiSelect v-model="draft.mood" label="Mood" :options="moodOptions" />
           </div>

@@ -1,4 +1,5 @@
 export { default as LayoutAppHeader } from './AppHeader.vue'
+export { default as LayoutAdminSidebar } from './AdminSidebar.vue'
 export { default as LayoutPageArticle } from './PageArticle.vue'
 export { default as LayoutPageBreadcrumb } from './PageBreadcrumb.vue'
 export { default as LayoutPageMain } from './PageMain.vue'
