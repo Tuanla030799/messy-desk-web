@@ -1,5 +1,7 @@
 export default defineNuxtRouteMiddleware((to) => {
-  if (!to.path.startsWith('/admin')) {
+  const isAdminPath = to.path === '/admin' || to.path.startsWith('/admin/')
+
+  if (!isAdminPath) {
     return
   }
 

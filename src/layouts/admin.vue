@@ -47,8 +47,10 @@ const { user, logout } = useAuth()
 
 const navItems = [
   { to: '/admin', label: 'Dashboard' },
+  { to: '/admin/users', label: 'Users' },
+  { to: '/admin/notes', label: 'Notes' },
+  { to: '/admin/blog', label: 'Blog' },
   { to: '/ui-guide', label: 'UI Guide' },
-  { to: '/blog', label: 'Posts' },
 ]
 
 const handleLogout = async () => {

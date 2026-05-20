@@ -12,7 +12,9 @@
         <tbody>
           <tr v-for="(row, index) in rows" :key="index" class="odd:bg-paper/60">
             <td v-for="column in columns" :key="column.key" class="border-b border-ink/10 px-4 py-3 font-bold text-ink">
-              {{ row[column.key] }}
+              <slot :name="`cell-${column.key}`" :row="row" :value="row[column.key]" :column="column">
+                {{ row[column.key] }}
+              </slot>
             </td>
           </tr>
         </tbody>
@@ -24,6 +26,6 @@
 <script setup lang="ts">
 defineProps<{
   columns: Array<{ key: string; label: string }>
-  rows: Array<Record<string, string | number>>
+  rows: Array<Record<string, unknown>>
 }>()
 </script>
